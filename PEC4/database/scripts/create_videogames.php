@@ -8,7 +8,7 @@ $sandbox = Genre::create(['name' => 'Sandbox']);
 $racing = Genre::create(['name' => 'Racing']);
 $arcade = Genre::create(['name' => 'Arcade']);
 $fps = Genre::create(['name' => 'FPS']);
-$puzzle = Genre::create(['name' => 'MOBA']);
+$puzzle = Genre::create(['name' => 'Puzzle']);
 $moba = Genre::create(['name' => 'MOBA']);
 $terror = Genre::create(['name' => 'Terror']);
 $fighting = Genre::create(['name' => 'Fighting']);
