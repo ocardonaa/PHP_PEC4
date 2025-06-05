@@ -2,9 +2,30 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Videogame;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
-    return view('welcome');
+    $videogames = Videogame::all();
+    $videogames_chosen = new Collection();
+    $videogames_chosen->push(Videogame::first());
+    $videogames_chosen->push(Videogame::find(2));
+    $numbers = range(3, 50);
+    $randomNumbers = Arr::random($numbers, 3);
+    foreach($randomNumbers as $randNum) {
+        $videogames_chosen->push(Videogame::find($randNum));
+    }
+    return view('home', [
+        'videogames' => $videogames_chosen
+    ]);
+});
+
+Route::get('home/{videogame}', function ($id) {
+    return view('videogame', [
+        'videogame' => Videogame::findOrFail($id)
+    ]);
 });
 
 Route::get('/dashboard', function () {
