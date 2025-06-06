@@ -23,11 +23,29 @@
                         <p style='color: white'>Hola de nuevo, {{Auth::user()->name}}!</p>
                     @endif
                     <a
-                            href="{{ url('/') }}"
-                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
-                        >
-                            Home
-                        </a>
+                        href="{{ url('/') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="{{ url('/api/videogames/1') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
+                    >
+                        API Videogames
+                    </a>
+                    <a
+                        href="{{ url('/api/videogame/1') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
+                    >
+                        API Videogame
+                    </a>
+                    <a
+                        href="{{ url('/api/genre/1/1') }}"
+                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
+                    >
+                        API Genre
+                    </a>
                     @auth
                         <a
                             href="{{ url('/dashboard') }}"
